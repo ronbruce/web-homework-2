@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator Results</title>
+    </head>
+    <body>
+        <h1>Calculator Result</h1>
+        <p>Operation: {{ operation }}</p>
+        <p>Operand 1: {{ operand1 }}</p>
+        <p>Operand 2: {{ operand2 }}</p>
+    
+        {% if operation == 'add' %}
+        {% set result = operand1 + operand2 %}
+        {% set operator = '+' %}
+        <p>Result: {{ result }}</p>
+        <!---->
+        {% elif operation == 'subtract' %}
+        {% set result = operand1 - operand2 %}
+        {% set operator = '-' %}
+        <p>Result: {{ result }}</p>
+        <!---->
+        {% elif operation == 'multiply' %}
+        {% set result = operand1 * operand2 %}
+        {% set operator = '*' %}
+        <p>Result: {{ result }}</p>
+        <!---->
+        {% elif operation == 'divide' %}
+        {% set result = operand1 / operand2 %}
+        {% set operator = '/' %}
+        <p>Result: {{ result }}</p>
+        {% else %}
+        <p>Hmmm. Idk about that calculation, try again.</p>
+        {% endif %}      
+    </body>
+</html>
