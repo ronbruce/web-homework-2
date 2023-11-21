@@ -79,32 +79,36 @@ class TestApp(unittest.TestCase):
         self.assertEqual(res.status_code, 200)
 
         result_page_text = res.get_data(as_text=True)
-        self.assertIn('add 6 and 7', result_page_text)
-        self.assertIn('result is: 13', result_page_text)
-
+        self.assertIn('Operand 1: 6', result_page_text)
+        self.assertIn('Operand 2: 7', result_page_text)
+        self.assertIn('Result: 13', result_page_text)
+    
     def test_calculator_subtract(self):
         res = app.test_client().get('/calculator_results?operand1=6&operand2=7&operation=subtract')
         self.assertEqual(res.status_code, 200)
 
         result_page_text = res.get_data(as_text=True)
-        self.assertIn('subtract 6 and 7', result_page_text)
-        self.assertIn('result is: -1', result_page_text)
+        self.assertIn('Operand 1: 6', result_page_text)
+        self.assertIn('Operand 2: 7', result_page_text)
+        self.assertIn('Result: -1', result_page_text)
 
     def test_calculator_multiply(self):
         res = app.test_client().get('/calculator_results?operand1=6&operand2=7&operation=multiply')
         self.assertEqual(res.status_code, 200)
 
         result_page_text = res.get_data(as_text=True)
-        self.assertIn('multiply 6 and 7', result_page_text)
-        self.assertIn('result is: 42', result_page_text)
+        self.assertIn('Operand 1: 6', result_page_text)
+        self.assertIn('Operand 2: 7', result_page_text)
+        self.assertIn('Result: 42', result_page_text)
 
     def test_calculator_divide(self):
         res = app.test_client().get('/calculator_results?operand1=6&operand2=3&operation=divide')
         self.assertEqual(res.status_code, 200)
 
         result_page_text = res.get_data(as_text=True)
-        self.assertIn('divide 6 and 3', result_page_text)
-        self.assertIn('result is: 2', result_page_text)
+        self.assertIn('Operand 1: 6', result_page_text)
+        self.assertIn('Operand 2: 3', result_page_text)
+        self.assertIn('Result: 2', result_page_text)
 
     def test_horoscope_aries(self):
         random.seed(1)
