@@ -73,7 +73,8 @@ class TestApp(unittest.TestCase):
 
         result_page_text = res.get_data(as_text=True)
         self.assertIn('HWdellloor', result_page_text)
-
+    
+    # Edited my the 'test_calculator_add' method so my unit test can pass when it checks my 'calculator_results.html'.
     def test_calculator_add(self):
         res = app.test_client().get('/calculator_results?operand1=6&operand2=7&operation=add')
         self.assertEqual(res.status_code, 200)
@@ -83,6 +84,7 @@ class TestApp(unittest.TestCase):
         self.assertIn('Operand 2: 7', result_page_text)
         self.assertIn('Result: 13', result_page_text)
     
+    # Edited my the 'test_calculator_subtract' method so my unit test can pass when it checks my 'calculator_results.html'.
     def test_calculator_subtract(self):
         res = app.test_client().get('/calculator_results?operand1=6&operand2=7&operation=subtract')
         self.assertEqual(res.status_code, 200)
@@ -92,6 +94,7 @@ class TestApp(unittest.TestCase):
         self.assertIn('Operand 2: 7', result_page_text)
         self.assertIn('Result: -1', result_page_text)
 
+    # Edited my the 'test_calculator_multiply' method so my unit test can pass when it checks my 'calculator_results.html'.
     def test_calculator_multiply(self):
         res = app.test_client().get('/calculator_results?operand1=6&operand2=7&operation=multiply')
         self.assertEqual(res.status_code, 200)
@@ -101,6 +104,7 @@ class TestApp(unittest.TestCase):
         self.assertIn('Operand 2: 7', result_page_text)
         self.assertIn('Result: 42', result_page_text)
 
+     # Edited my the 'test_calculator_divide' method so my unit test can pass when it checks my 'calculator_results.html'.
     def test_calculator_divide(self):
         res = app.test_client().get('/calculator_results?operand1=6&operand2=3&operation=divide')
         self.assertEqual(res.status_code, 200)
